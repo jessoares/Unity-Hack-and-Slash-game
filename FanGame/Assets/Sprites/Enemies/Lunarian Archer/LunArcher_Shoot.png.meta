@@ -1,0 +1,260 @@
+fileFormatVersion: 2
+guid: e2a94615faf0c55449827463ea7e3791
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1610425203171448262
+    second: LunArcher_Shoot_0
+  - first:
+      213: -8030210061313806982
+    second: LunArcher_Shoot_1
+  - first:
+      213: -5319172701311498365
+    second: LunArcher_Shoot_2
+  - first:
+      213: -239399327505701490
+    second: LunArcher_Shoot_3
+  - first:
+      213: -1836783219265098941
+    second: LunArcher_Shoot_4
+  - first:
+      213: -2389724942756365076
+    second: LunArcher_Shoot_5
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 35
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LunArcher_Shoot_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 15
+        width: 30
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5159664, y: 0.52986}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f84b54a3d14eb4294c720a752aaa40
+      internalID: 1610425203171448262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunArcher_Shoot_1
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 13
+        width: 39
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5506433, y: 0.510863}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 794c23f632f7fe3489f477451db3e022
+      internalID: -8030210061313806982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunArcher_Shoot_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 13
+        width: 42
+        height: 43
+      alignment: 9
+      pivot: {x: 0.53470355, y: 0.4799136}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b1b3e5b1ce49c409415b547b16dc49
+      internalID: -5319172701311498365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunArcher_Shoot_3
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 13
+        width: 40
+        height: 42
+      alignment: 9
+      pivot: {x: 0.58466876, y: 0.48942477}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0eb7cbf2e0f559449956ec8223429e5
+      internalID: -239399327505701490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunArcher_Shoot_4
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 15
+        width: 34
+        height: 39
+      alignment: 9
+      pivot: {x: 0.60147274, y: 0.47788405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0e36a40da5391f489513adf24b68b70
+      internalID: -1836783219265098941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunArcher_Shoot_5
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 12
+        width: 35
+        height: 42
+      alignment: 9
+      pivot: {x: 0.64013845, y: 0.51497203}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1b747fb032bb88439736589113a3562
+      internalID: -2389724942756365076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
