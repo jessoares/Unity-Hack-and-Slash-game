@@ -19,7 +19,7 @@ public class LunarianLancerAI : MonoBehaviour
     [Space]
     [Header("Shooting AI")]
     private bool facingRight = true;
-    private float timeBtwShots;
+    public float timeBtwShots;
     public float startTimeBtwShots;
     [Space]
     [Header("Shooting")]
@@ -41,8 +41,8 @@ public class LunarianLancerAI : MonoBehaviour
     public float nextWaypointDistance;
 
     Path path;
-    int currentWaypoint = 0;
-    bool reachedEndofPath = false;
+   public int currentWaypoint = 0;
+   public  bool reachedEndofPath = false;
 
     public bool isSpawning;
 
@@ -94,22 +94,7 @@ public class LunarianLancerAI : MonoBehaviour
             {
                 if (isShooting == false)
                 {
-                    Aiming();
-                }
-                timeBtwShots -= Time.deltaTime;
-
-                if (path == null)                                 // path logic
-                    return;
-                if (currentWaypoint >= path.vectorPath.Count)         // if player is near enemy will start attack sequence
-                {
-                    transform.position = this.transform.position;
-                    animator.SetBool("IsRunning", false);
-                    Shoot();
-                    reachedEndofPath = true;
-                    return;
-                }
-                else if (isShooting == false)             // if not, and its not shooting, it may move
-                {
+                    timeBtwShots -= Time.deltaTime;
                     Aiming();
                     if (player.position.x < transform.position.x && facingRight)
                     {
@@ -122,26 +107,42 @@ public class LunarianLancerAI : MonoBehaviour
                             Flip();
                         }
                     }
-                    if (Vector2.Distance(transform.position, (Vector2)path.vectorPath[currentWaypoint]) > nextWaypointDistance)
-                    {
-                        animator.SetBool("IsRunning", true);
-                        transform.position = Vector2.MoveTowards(transform.position, (Vector2)path.vectorPath[currentWaypoint], speed * Time.deltaTime);
-                    }
-                    float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-                    if (distance < nextWaypointDistance)
+                    
+                            if (Vector2.Distance(transform.position, (Vector2)path.vectorPath[currentWaypoint]) > nextWaypointDistance)
+                            {
+                             animator.SetBool("IsRunning", true);
+                                transform.position = Vector2.MoveTowards(transform.position, (Vector2)path.vectorPath[currentWaypoint], speed * Time.deltaTime);
+                        }
+                    if (Vector2.Distance(transform.position, path.vectorPath[currentWaypoint]) < nextWaypointDistance)
                     {
                         currentWaypoint++;
                     }
-                    reachedEndofPath = false;
+                    
+                        reachedEndofPath = false;
+                        if (path == null)                                 // path logic
+                            return;
+                       if (currentWaypoint >= path.vectorPath.Count)         // if player is near enemy will start attack sequence
+                        {
+                            transform.position = this.transform.position;
+                            animator.SetBool("IsRunning", false);
+                            Shoot();
+                            reachedEndofPath = true;
+                            return;
+                        }
+
+
+
+
+                       
+                   
                 }
+
+
+
             }
+
         }
-
-
-
     }
-    
-
     void OnPathComplete(Path p)
     {
         if (!p.error)
@@ -202,12 +203,8 @@ public class LunarianLancerAI : MonoBehaviour
             {
                 Destroy(slashVelocity.gameObject);
             }
-
         }
         StartCoroutine(WaitCoroutine());
-
-
-
     }
 
     private void OnDrawGizmosSelected()//attack collider visualization in-engine

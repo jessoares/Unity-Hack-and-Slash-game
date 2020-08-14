@@ -125,6 +125,11 @@ public class PlayerController : MonoBehaviour
                 state = State.Dodge; //changes state for dash 
                 slideDir = (UtilsClass.GetMouseWorldPosition() - transform.position).normalized; // position where to dash to 
                 slideSpeed = 35f; //dash force
+                GetComponent<PlayerAttack>().animator.SetBool("Charge", false);
+                GetComponent<PlayerAttack>().bortzTimer = 0f;
+                GetComponent<PlayerAttack>().bortzSpecialReady = false;
+                moveSpeed = baseMoveSpeed;
+                GetComponent<PlayerAttack>().nextBortzSpecialTime = Time.time + 1f / GetComponent<PlayerAttack>().bortzSpecialRate;
             }
         }
     }

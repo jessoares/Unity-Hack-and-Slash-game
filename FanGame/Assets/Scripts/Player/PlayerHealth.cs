@@ -68,6 +68,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else 
         {
+            isDead = true;
             GetComponent<PlayerAttack>().enabled = false;
             GetComponent<PlayerController>().playerRb.velocity = Vector2.zero;
             GetComponent<PlayerController>().enabled = false;
@@ -78,10 +79,11 @@ public class PlayerHealth : MonoBehaviour
 
     }
     void Die()
-    { 
+    {
         animator.SetTrigger("Dead");
         StartCoroutine(DeathCoroutine());
         FindObjectOfType<GameManager>().EndGame();
+
   
     }
     public IEnumerator DeathCoroutine()
@@ -133,8 +135,11 @@ public class PlayerHealth : MonoBehaviour
                 if (GetComponent<PlayerHealth>().isDead == false)
                 {
                     TakeDamage(1);
-
                 }
+            }
+            else
+            {
+                return;
             }
         }
 

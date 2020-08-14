@@ -27,6 +27,8 @@ public class PlayerAttack : MonoBehaviour
     public float bortzTimer = 0;
     public bool bortzSpecialReady = false;
     public bool bortzSpecialLoad = false;
+    public float nextBortzSpecialTime = 0f;
+    public float bortzSpecialRate;
     public State state = State.Normal;
     public float timer = 0f;
     public enum State
@@ -106,7 +108,7 @@ public class PlayerAttack : MonoBehaviour
     private void ProcessInputs()
     {
         //logic for the special attack's rate
-        if (state == State.Normal && GetComponent<PlayerController>().state == PlayerController.State.Normal && isSpecial == false)
+        if (state == State.Normal && GetComponent<PlayerController>().state == PlayerController.State.Normal)
         {
             //logic for the attack's rate
             if (Time.time >= nextAttackTime && GetComponent<PlayerController>().state == PlayerController.State.Normal)
@@ -118,7 +120,7 @@ public class PlayerAttack : MonoBehaviour
                     nextAttackTime = Time.time + 1f / attackRate;
                     bortzTimer = 0f;
                 }
-                if (isBortz == true && Input.GetButton("Fire1"))
+                if (isBortz == true && Input.GetButton("Fire1") && Time.time >= nextBortzSpecialTime)
                 {
                     bortzTimer += Time.deltaTime;
                     GetComponent<PlayerController>().moveSpeed = Mathf.Lerp(5f, 0f, bortzTimer);
@@ -141,24 +143,32 @@ public class PlayerAttack : MonoBehaviour
                     animator.SetTrigger("Special");
                     StartCoroutine(BortzSpecialAttack());
                     bortzTimer = 0f;
+                    nextBortzSpecialTime = Time.time + 1f / bortzSpecialRate;
                 }
                 if (isBortz == true && Input.GetButtonUp("Fire1") && bortzSpecialReady == false)
                 {
                     animator.SetBool("Charge", false);
                     bortzTimer = 0f;
                     bortzSpecialReady = false;
+                    GetComponent<PlayerController>().moveSpeed = GetComponent<PlayerController>().baseMoveSpeed;
+                    nextBortzSpecialTime = Time.time + 1f / bortzSpecialRate;
                 }
 
 
             }
             //logic for the block's rate
-            if (Time.time >= nextBlock && GetComponent<PlayerHealth>().isBlocking == false && GetComponent<PlayerController>().state == PlayerController.State.Normal)
+            if (Time.time >= nextBlock && GetComponent<PlayerHealth>().isBlocking == false && GetComponent<PlayerController>().state == PlayerController.State.Normal && state == State.Normal)
             {
                 //blocking input
                 if (Input.GetKeyDown(KeyCode.LeftShift))
                 {
                     GetComponent<PlayerHealth>().isBlocking = true;
                     nextBlockTime = Time.time + 1f / blockRate;
+                    animator.SetBool("Charge", false);
+                    bortzTimer = 0f;
+                    bortzSpecialReady = false;
+                    GetComponent<PlayerController>().moveSpeed = GetComponent<PlayerController>().baseMoveSpeed;
+                    nextBortzSpecialTime = Time.time + 1f / bortzSpecialRate;
                 }
             }
             if (GetComponent<PlayerHealth>().isBlocking == true)
